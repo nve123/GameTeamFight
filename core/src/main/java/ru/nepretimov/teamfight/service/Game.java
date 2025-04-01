@@ -1,7 +1,8 @@
 package ru.nepretimov.teamfight.service;
 
-import ru.example.game.unit.Team;
-import ru.example.game.unit.Unit;
+
+import ru.nepretimov.teamfight.unit.Team;
+import ru.nepretimov.teamfight.unit.Unit;
 
 public class Game {
     private final Team t1;
