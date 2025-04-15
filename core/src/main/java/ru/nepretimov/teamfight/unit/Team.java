@@ -1,7 +1,7 @@
 package ru.nepretimov.teamfight.unit;
 
 
-import ru.nepretimov.teamfight.service.UnitUtil;
+import ru.nepretimov.teamfight.util.UnitUtil;
 
 public class Team {
     private Unit[] units;

@@ -1,4 +1,4 @@
-package ru.nepretimov.teamfight.service;
+package ru.nepretimov.teamfight.util;
 
 import ru.nepretimov.teamfight.unit.MachineGunner;
 import ru.nepretimov.teamfight.unit.Magika;
