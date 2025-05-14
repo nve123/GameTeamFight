@@ -5,7 +5,7 @@ public class Magika extends Unit {
     private int dmg = 5;
 
     public Magika(String name, int hp, int mp) {
-        super(name, hp);
+        super(name, hp, 120, 0, 120, 120);
         this.mp = mp;
     }
 
@@ -31,5 +31,10 @@ public class Magika extends Unit {
 
     public int getDmg(){
         return dmg;
+    }
+
+    @Override
+    public void initAnimationMaps() {
+
     }
 }

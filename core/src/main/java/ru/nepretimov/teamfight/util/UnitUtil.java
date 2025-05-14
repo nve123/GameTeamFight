@@ -7,7 +7,8 @@ import ru.nepretimov.teamfight.unit.Warrior;
 
 import java.util.Random;
 
-public class UnitUtil {
+public class
+UnitUtil {
     public static int random(int min, int max) {
         Random r = new Random();
         return r.nextInt(min, max);

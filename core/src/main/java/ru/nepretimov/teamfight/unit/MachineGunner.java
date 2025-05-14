@@ -5,7 +5,7 @@ public class MachineGunner extends Unit {
     private int dmg = 10;
 
     public MachineGunner(String name, int hp, int ammo) { // у этих юнитов мало хп но много дмаги
-        super(name, hp);
+        super(name, hp, 0, 0, 120, 120);
         this.ammo = ammo;
     }
 
@@ -40,5 +40,10 @@ public class MachineGunner extends Unit {
 
     public int getDmg(){
         return dmg;
+    }
+
+    @Override
+    public void initAnimationMaps() {
+
     }
 }

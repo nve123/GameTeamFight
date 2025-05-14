@@ -8,29 +8,33 @@ import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.utils.ScreenUtils;
+import ru.nepretimov.teamfight.unit.UnitState;
+import ru.nepretimov.teamfight.unit.Warrior;
 import ru.nepretimov.teamfight.util.AnimationUtil;
 
 /** {@link com.badlogic.gdx.ApplicationListener} implementation shared by all platforms. */
 public class Main extends ApplicationAdapter {
     private SpriteBatch batch;
-    private Animation<TextureRegion> orc;
     private float curTime;
+    private Warrior warrior;
 
     @Override
     public void create() {
         batch = new SpriteBatch();
-        Texture image = new Texture("Orc-Attack01.png");
-        orc = AnimationUtil.getAnimationFromTexture(image, 6, 1, 1);
         curTime = 0;
+        warrior = new Warrior("Jane Doe",100,10);
+        warrior.setCurState(UnitState.ATTACK);
     }
 
     @Override
     public void render() {
         ScreenUtils.clear(0.15f, 0.15f, 0.2f, 1f);
+        float deltaTime = Gdx.graphics.getDeltaTime();
+        warrior.setTimeInState(deltaTime);
         batch.begin();
-        batch.draw(orc.getKeyFrame(curTime, true), 140, 210);
+        warrior.draw(batch);
         batch.end();
-        curTime += Gdx.graphics.getDeltaTime();
+        curTime += deltaTime;
     }
 
     @Override
