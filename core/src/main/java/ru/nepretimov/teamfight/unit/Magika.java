@@ -1,11 +1,14 @@
 package ru.nepretimov.teamfight.unit;
 
+import com.badlogic.gdx.graphics.Texture;
+import ru.nepretimov.teamfight.util.AnimationUtil;
+
 public class Magika extends Unit {
     private int mp;
     private int dmg = 5;
 
     public Magika(String name, int hp, int mp) {
-        super(name, hp, 120, 0, 120, 120);
+        super(name, hp, 0, 0, 250, 500);
         this.mp = mp;
     }
 
@@ -35,6 +38,17 @@ public class Magika extends Unit {
 
     @Override
     public void initAnimationMaps() {
-
+        enumMap.put(
+            UnitState.IDLE,
+            AnimationUtil.getAnimationFromTexture(new Texture("Soldier-Idle.png"), 6, 1,1)
+        );
+        enumMap.put(
+            UnitState.ATTACK,
+            AnimationUtil.getAnimationFromTexture(new Texture("Soldier-Attack03.png"), 9, 1,1)
+        );
+        enumMap.put(
+            UnitState.DIE,
+            AnimationUtil.getAnimationFromTexture(new Texture("Soldier-Death.png"), 4, 1,1)
+        );
     }
 }
