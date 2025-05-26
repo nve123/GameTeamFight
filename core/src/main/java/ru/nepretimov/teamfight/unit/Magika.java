@@ -8,7 +8,7 @@ public class Magika extends Unit {
     private int dmg = 5;
 
     public Magika(String name, int hp, int mp) {
-        super(name, hp, 0, 0, 250, 500);
+        super(name, hp, 0, 200, 70, 150);
         this.mp = mp;
     }
 
@@ -40,15 +40,15 @@ public class Magika extends Unit {
     public void initAnimationMaps() {
         enumMap.put(
             UnitState.IDLE,
-            AnimationUtil.getAnimationFromTexture(new Texture("Soldier-Idle.png"), 6, 1,1)
+            AnimationUtil.getAnimationFromTexture(new Texture("Mage-Idle.png"), 6, 1,1)
         );
         enumMap.put(
             UnitState.ATTACK,
-            AnimationUtil.getAnimationFromTexture(new Texture("Soldier-Attack03.png"), 9, 1,1)
+            AnimationUtil.getAnimationFromTexture(new Texture("Mage-Attack.png"), 6, 1,1)
         );
         enumMap.put(
             UnitState.DIE,
-            AnimationUtil.getAnimationFromTexture(new Texture("Soldier-Death.png"), 4, 1,1)
+            AnimationUtil.getAnimationFromTexture(new Texture("Mage-Death.png"), 6, 1,1)
         );
     }
 }

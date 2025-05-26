@@ -8,6 +8,7 @@ import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.utils.ScreenUtils;
+import ru.nepretimov.teamfight.unit.MachineGunner;
 import ru.nepretimov.teamfight.unit.Magika;
 import ru.nepretimov.teamfight.unit.UnitState;
 import ru.nepretimov.teamfight.unit.Warrior;
@@ -19,6 +20,7 @@ public class Main extends ApplicationAdapter {
     private float curTime;
     private Warrior warrior;
     private Magika magika;
+    private MachineGunner mg;
 
     @Override
     public void create() {
@@ -26,8 +28,10 @@ public class Main extends ApplicationAdapter {
         curTime = 0;
         warrior = new Warrior("Jane Doe",100,10);
         warrior.setCurState(UnitState.ATTACK);
+        mg = new MachineGunner("Haevy", 300, 200);
+        mg.setCurState(UnitState.IDLE);
         magika = new Magika("Andrey", 100, 100);
-        magika.setCurState(UnitState.IDLE);
+        magika.setCurState(UnitState.DIE);
     }
 
     @Override
@@ -36,9 +40,11 @@ public class Main extends ApplicationAdapter {
         float deltaTime = Gdx.graphics.getDeltaTime();
         magika.setTimeInState(deltaTime);
         warrior.setTimeInState(deltaTime);
+        mg.setTimeInState(deltaTime);
         batch.begin();
         magika.draw(batch);
         warrior.draw(batch);
+        mg.draw(batch);
         batch.end();
         curTime += deltaTime;
     }
