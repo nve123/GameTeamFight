@@ -43,7 +43,7 @@ public class Warrior extends Unit {
         );
         enumMap.put(
             UnitState.ATTACK,
-            AnimationUtil.getAnimationFromTexture(new Texture("Orc-Attack01.png"), 6, 1,1)
+            AnimationUtil.getAnimationFromTexture(new Texture("Orc-Attack01.png"), 6, 1,6)
         );
         enumMap.put(
             UnitState.DIE,

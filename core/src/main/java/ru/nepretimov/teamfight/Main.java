@@ -29,7 +29,7 @@ public class Main extends ApplicationAdapter {
         warrior = new Warrior("Jane Doe",100,10);
         warrior.setCurState(UnitState.ATTACK);
         mg = new MachineGunner("Haevy", 300, 200);
-        mg.setCurState(UnitState.IDLE);
+        mg.setCurState(UnitState.ATTACK);
         magika = new Magika("Andrey", 100, 100);
         magika.setCurState(UnitState.DIE);
     }
